@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ExplorerNavigation (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ExplorerNavigation (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

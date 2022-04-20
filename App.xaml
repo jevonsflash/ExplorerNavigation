@@ -1,0 +1,83 @@
+﻿<Application
+    x:Class="ExplorerNavigation.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExplorerNavigation"
+    xmlns:common="using:ExplorerNavigation.Common">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                <!-- Other merged dictionaries here -->
+            </ResourceDictionary.MergedDictionaries>
+            <!-- Other app resources here -->
+            <common:NullToVisibilityConverter x:Key="nullToVisibilityConverter" />
+            <common:NullToVisibilityConverter x:Key="inverseNullToVisibilityConverter" NonNullValue="Collapsed" NullValue="Visible" />
+            <common:BoolToVisibilityConverter x:Key="falseToVisibilityConverter" />
+            <common:BoolToVisibilityConverter x:Key="trueToVisibilityConverter" NonNullValue="Collapsed" NullValue="Visible" />
+            <common:AbsoluteNameConverter x:Key="absoluteNameConverter"  />
+            <common:IsTypeToBoolConverter x:Key="isTypeToBoolConverter"  />
+
+            <common:IsTypeToVisibilityConverter x:Key="isTypeToVisibilityConverter" />
+            <common:IsTypeToVisibilityConverter x:Key="isNotTypeToVisibilityConverter" NonNullValue="Collapsed" NullValue="Visible" />
+
+            <common:IsValueToVisibilityConverter x:Key="isValueToVisibilityConverter" />
+            <common:IsValueToVisibilityConverter x:Key="isNotValueToVisibilityConverter" NonNullValue="Collapsed" NullValue="Visible" />
+
+            <!-- Other app resources here -->
+            <SolidColorBrush x:Key="WindowCaptionForeground" Color="{ThemeResource TextFillColorPrimary}"></SolidColorBrush>
+            <SolidColorBrush x:Key="WindowCaptionForegroundDisabled" Color="{ThemeResource TextFillColorSecondary}"></SolidColorBrush>
+
+            <AcrylicBrush
+                x:Key="WindowCaptionBackground"
+                FallbackColor="{ThemeResource SolidBackgroundFillColorSecondary}"
+                TintColor="{ThemeResource SolidBackgroundFillColorSecondary}"
+                TintOpacity="0.65" ></AcrylicBrush>
+
+            <AcrylicBrush
+                x:Key="WindowCaptionBackgroundDisabled"
+                FallbackColor="{ThemeResource SolidBackgroundFillColorTertiary}"
+                TintColor="{ThemeResource SolidBackgroundFillColorTertiary}"
+                TintOpacity="0.65" ></AcrylicBrush>
+
+
+
+            <Style x:Key="NavigationViewPaneSearchButtonStyle" TargetType="Button">
+                <Setter Property="BorderThickness" Value="{ThemeResource NavigationViewToggleBorderThickness}" />
+
+            </Style>
+            <Style x:Key="NavigationBarButtonStyle" TargetType="ButtonBase">
+                <Setter Property="BorderThickness" Value="{ThemeResource NavigationViewToggleBorderThickness}" />
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Margin" Value="2,0"></Setter>
+            </Style>
+            <Style x:Key="NavigationBarButtonTextStyle" TargetType="FontIcon">
+                <Setter Property="FontFamily" Value="{ThemeResource SymbolThemeFontFamily}" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+
+            <Style x:Key="SideBarButtonTextStyle" TargetType="FontIcon">
+                <Setter Property="FontFamily" Value="{ThemeResource SymbolThemeFontFamily}" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+
+            <Style x:Key="DetailIconTextStyle" TargetType="FontIcon">
+                <Setter Property="FontFamily" Value="{ThemeResource SymbolThemeFontFamily}" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="Margin" Value="0,5"></Setter>
+                <Setter Property="VerticalAlignment" Value="Top"></Setter>
+            </Style>
+
+            <Style x:Key="NavigationTextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontWeight" Value="SemiLight" />
+            </Style>
+
+            <Style x:Key="NavigationFlyoutStyle" TargetType="FlyoutPresenter">
+                <Setter Property="Padding" Value="0,0,0,0" />
+                <Setter Property="MinWidth" Value="650" />
+                <Setter Property="MinHeight" Value="250" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
